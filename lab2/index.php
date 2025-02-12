@@ -36,6 +36,7 @@
 	<footer>
 		<div class="container">
 			<p>Задание для самостоятельной работы</p>
+			<p><a href="https://github.com/Daniil888-m/Kolotygin241-3210_PHP">Ссылка на GitHub</a></p>
 		</div>
 	</footer>
 </body>
