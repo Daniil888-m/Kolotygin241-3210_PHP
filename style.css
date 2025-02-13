@@ -48,6 +48,11 @@ header h1 {
 	
 }
 
+#user-form {
+	display: flex;
+    flex-direction: column;
+}
+
 
 /* Основной контент */
 main {

@@ -5,14 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>2 Лаба: Текущее время</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 	<header>
 		<div class="container">
 			<div class="container">
-				<img src="top_sh.png" alt="Image">
+				<img src="../top_sh.png" alt="Image">
 				<h1>2 лаба: Текущее время</h1>
 			</div>
 
@@ -35,7 +35,7 @@
 
 	<footer>
 		<div class="container">
-			<p>Задание для самостоятельной работы</p>
+			<p>Задание для самостоятельной работы выполнил Колотыгин Даниил 241-3210</p>
 			<p><a href="https://github.com/Daniil888-m/Kolotygin241-3210_PHP">Ссылка на GitHub</a></p>
 		</div>
 	</footer>
