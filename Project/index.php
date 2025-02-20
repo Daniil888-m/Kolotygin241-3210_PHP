@@ -142,3 +142,40 @@ class B extends A
 $b = new B();
 
 echo $b->method1();
+
+
+abstract class AbstractClass
+{
+	public abstract function getValue();
+
+	public function printValue()
+	{
+		echo $this->getValue();
+	}
+}
+
+class Math
+{
+
+	public $num;
+	public static $PI = 3.14;
+
+	public static function getPi()
+	{
+		return self::$PI;
+	}
+
+	public function __construct(int $num)
+	{
+		$this->num = $num;
+	}
+
+	public static function createBigNum()
+	{
+		return new self(10000000000);
+	}
+}
+
+echo '<br>';
+var_dump(Math::getPi());
+echo '</br>';
