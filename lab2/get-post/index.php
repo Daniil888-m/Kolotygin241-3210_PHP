@@ -124,7 +124,7 @@
 		<?php echo var_dump($_GET);
 		if (isset($_GET['num'])) {
 			echo '<br>';
-			var_dump($_GET['num']);
+			echo $_GET['num'];
 			echo '</br>';
 		}
 
