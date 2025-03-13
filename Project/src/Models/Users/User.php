@@ -2,8 +2,6 @@
 
 namespace src\Models\Users;
 
-use src\Models\Articles;
-
 class User
 {
 	private $name;

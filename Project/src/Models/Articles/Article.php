@@ -2,7 +2,7 @@
 
 namespace src\Models\Articles;
 
-use src\Models\Users;
+use src\Models\Users\User;
 
 class Article
 {
@@ -10,7 +10,7 @@ class Article
 	private $text;
 	private $author;
 
-	public function __construct(string $title, string $text,  $author)
+	public function __construct(string $title, string $text, User $author)
 	{
 		$this->title = $title;
 		$this->text = $text;
@@ -25,7 +25,7 @@ class Article
 	{
 		$this->text = $text;
 	}
-	public function setAuthor($author)
+	public function setAuthor(User $author)
 	{
 		$this->author = $author;
 	}
@@ -38,7 +38,7 @@ class Article
 	{
 		return $this->text;
 	}
-	public function getAuthor()
+	public function getAuthor(): User
 	{
 		return $this->author;
 	}

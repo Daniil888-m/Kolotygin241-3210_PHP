@@ -4,9 +4,13 @@ namespace src\Controllers;
 
 class MainController
 {
-
-	public function sayHello()
+	public function sayHello(string $name)
 	{
-		echo 'Hello';
+		echo 'Hello, ' . $name;
+	}
+
+	public function main()
+	{
+		echo "Главная страница!";
 	}
 }
