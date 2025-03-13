@@ -1,33 +1,29 @@
 <?php
 
 spl_autoload_register(function (string $className) {
-	$className = str_replace('\\', '/', $className);
-
-	$file = __DIR__ . '/../' . $className . '.php';
-
-	if (file_exists($file)) {
-		require_once $file;
-	} else {
-		throw new Exception("Файл для класса {$className} не найден: {$file}");
-	}
+	require_once dirname(__DIR__) . '\\' . $className . '.php';
 });
+
+
+$findRoute = false;
+
 $route = $_GET['route'] ?? '';
+$patterns = require 'route.php';
+foreach ($patterns as $pattern => $controllerAndAction) {
+	preg_match($pattern, $route, $matches);
+	if (!empty($matches)) {
+		$findRoute = true;
+		unset($matches[0]);
+		$nameController = $controllerAndAction[0];
+		$actionName = $controllerAndAction[1];
+		$controller = new $nameController;
+		$controller->$actionName(...$matches);
+		break;
+	}
+}
 
-$pattern = "~^hello/(.*)$~";
-preg_match($pattern, $route, $matches);
+if (!$findRoute) echo "Page not found (404)";
 
-var_dump($matches);
-echo '<br>';
 
-$controller = new src\Controllers\MainController;
-
-if (!empty($matches)) {
-	$controller->sayHello($matches[1]);
-} else $controller->main();
-var_dump($_GET['route']);
 $user = new src\Models\Users\User('Ivan');
 $article = new src\Models\Articles\Article('title', 'text', $user);
-
-
-    // var_dump($user);
-    // var_dump($article);
